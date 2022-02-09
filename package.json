@@ -1,5 +1,6 @@
 {
   "name": "quillbot-app",
+  "homepage": "http://jeelanibhat.in/grammarly",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

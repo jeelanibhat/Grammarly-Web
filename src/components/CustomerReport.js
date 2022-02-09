@@ -35,7 +35,6 @@ const CustomerReport = () => {
                   backgroundColor: "#3e98c7",
                 })}
               />
-              ;
             </div>
             <p>70% of Grammarly users find writing more enjoyable.</p>
           </div>
