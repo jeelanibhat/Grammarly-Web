@@ -1,0 +1,427 @@
+// mixins
+@mixin d-flex($alignItems, $justifyContent, $flexDirection) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  flex-direction: $flexDirection;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+.main__title {
+  color: #0e101a;
+  text-align: center;
+  font-size: 42px;
+  letter-spacing: -0.005em;
+  line-height: 52px;
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+.second__title {
+  color: #0e101a;
+  text-align: center;
+  font-size: 29px;
+  letter-spacing: -0.005em;
+  line-height: 38px;
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.sub__title {
+  font-size: 18px;
+  line-height: 32px;
+  color: #0e101a;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+}
+.green__btn {
+  background: #11a683;
+  color: #fff;
+  border-radius: 6px;
+  height: 48px;
+  padding: 8px 32px;
+  text-align: center;
+  display: block;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+}
+.disabled__btn {
+  background: #f0f2fc;
+  color: #c6cbde;
+}
+.m-inherit {
+  margin: inherit;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+// Header css
+.header__wrap {
+  .header__wrap-nav {
+    @include d-flex(center, space-between, row);
+    padding: 12px 24px;
+    a {
+      color: #0e101a;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 32px;
+      text-decoration: none;
+    }
+  }
+  .heading__title {
+    margin: 60px 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: url("../assets/images/quillbot-bg.png") no-repeat;
+    background-size: contain;
+    background-position: -150px 0;
+    z-index: -1;
+    @media (max-width: 992px) {
+      width: 100%;
+      background-size: contain;
+      background-position: -100px 240px;
+      z-index: -1;
+    }
+  }
+}
+// Slider css
+.slider__wrapper {
+  padding: 60px 0 24px;
+  position: relative;
+  .slider__wrapper-inner {
+    @include d-flex(flex-start, center, row);
+    margin: auto;
+    position: relative;
+    max-width: 992px;
+    .slider__left {
+      width: 60%;
+      height: 450px;
+      max-width: 60%;
+      margin-right: auto;
+      .slider__left-box {
+        height: 450px;
+        .slider__left-content {
+          position: relative;
+          margin: 20px;
+          img:first-child {
+            box-shadow: 0 14px 15px rgba(109, 117, 141, 0.2);
+            width: 100%;
+            max-width: 388px;
+          }
+          img:last-child {
+            position: absolute;
+            top: 78%;
+            left: 15%;
+            box-shadow: 0 14px 55px #c4e2e4;
+            width: 100%;
+            max-width: 388px;
+            @media (max-width: 992px) {
+              width: 90%;
+              left: 5%;
+            }
+          }
+        }
+        @media (max-width: 992px) {
+          height: 40vh;
+        }
+      }
+      @media (max-width: 992px) {
+        width: 100%;
+        height: 330px;
+        max-width: 100%;
+        margin-right: 0;
+      }
+    }
+    .slider__right {
+      width: 38%;
+      .slider__right-box {
+        .slider__right-content {
+          padding: 5px 10px;
+          h3 {
+            margin: 0;
+            font-size: 16px;
+            line-height: 24px;
+            color: rgb(74, 110, 224);
+            font-style: normal;
+            font-weight: 700;
+          }
+          p {
+            font-size: 14px;
+            color: #6d758d;
+            line-height: 22px;
+            font-style: normal;
+            font-weight: 400;
+          }
+        }
+      }
+      @media (max-width: 992px) {
+        width: 96%;
+        margin: auto;
+      }
+    }
+    @media (max-width: 992px) {
+      flex-direction: column;
+      max-width: 600px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding-top: 0;
+  }
+}
+
+// Good to Great css
+.good__great-wrap {
+  padding: 60px 24px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: url("./images/quillbot-bg.png") no-repeat;
+    background-size: contain;
+    background-position: -150px 0;
+    z-index: -1;
+  }
+}
+
+// Up Level css
+.uplevel__wrapper {
+  max-width: 626px;
+  padding: 0 24px 60px;
+  margin: auto;
+  .uplevel-plans {
+    @include d-flex(flex-start, center, row);
+    .free-plan {
+      width: 48%;
+      margin-right: auto;
+      small {
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: rgb(109, 117, 141);
+      }
+      h3 {
+        font-size: 24px;
+        line-height: 32px;
+        color: rgb(14, 16, 26);
+        font-weight: 700;
+        margin: 10px 0;
+      }
+      .plan__desc-info {
+        font-size: 15px;
+        line-height: 24px;
+        color: rgb(14, 16, 26);
+        display: block;
+        min-height: 48px;
+        margin-bottom: 10px;
+      }
+      button {
+        min-width: 273px;
+        margin: inherit;
+        font-weight: bold;
+        @media (max-width: 767px) {
+          margin: 0;
+        }
+      }
+      .free-lists {
+        .css-cveggr-MuiListItemIcon-root {
+          min-width: 35px;
+          color: #15c39a;
+        }
+        .css-1p823my-MuiListItem-root {
+          padding-left: 0;
+          padding-bottom: 0;
+        }
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+    .premium-plan {
+      width: 48%;
+      small {
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: rgb(109, 117, 141);
+      }
+      h3 {
+        font-size: 24px;
+        line-height: 32px;
+        color: rgb(14, 16, 26);
+        font-weight: 700;
+        margin: 10px 0;
+      }
+      .plan__desc-info {
+        font-size: 15px;
+        line-height: 24px;
+        color: rgb(14, 16, 26);
+        display: block;
+        min-height: 48px;
+        margin-bottom: 10px;
+      }
+      button {
+        min-width: 273px;
+        margin: inherit;
+        font-weight: bold;
+        @media (max-width: 767px) {
+          margin: 0;
+        }
+      }
+      .free-lists {
+        .css-cveggr-MuiListItemIcon-root {
+          min-width: 35px;
+          color: #15c39a;
+        }
+        .css-1p823my-MuiListItem-root {
+          padding-left: 0;
+          padding-bottom: 0;
+        }
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      padding: 0 24px;
+    }
+  }
+}
+
+// Report css
+.report__wrapper {
+  background: #f9faff;
+  .report__wrapper-inner {
+    padding: 60px 24px;
+    max-width: 1024px;
+    margin: auto;
+    .good__great-inner {
+      .second__title {
+        text-align: left;
+      }
+      .sub__title {
+        text-align: left;
+      }
+    }
+    .progress__bar {
+      @include d-flex(center, space-around, row);
+      .progress__bar-item {
+      }
+      p {
+        color: #0e101a;
+        text-align: left;
+        font-size: 16px;
+        line-height: 28px;
+        max-width: 320px;
+        opacity: 0.9;
+      }
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 1024px) {
+      max-width: 768px;
+    }
+    @media (max-width: 768px) {
+      max-width: 600px;
+    }
+  }
+}
+
+// Slick Slider Modify
+.slick-slide {
+  transform: translate3d(0, -30px, 0);
+}
+.slick-active .slider__left-content {
+  transition: all 1s ease-in;
+}
+.slick-dots {
+  top: 0;
+  left: 104%;
+  width: 62%;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  @media (max-width: 992px) {
+    top: 328px;
+    left: 0;
+    width: 100%;
+  }
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 78px;
+  max-height: 108px;
+  margin: 0 0 7px;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #e7e9f5;
+  border-radius: 1px;
+  height: 2px;
+  width: 100%;
+}
+.slick-dots li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  border-radius: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #0e101a;
+}
+.slick-dots li.slick-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #0e101a;
+  transition: all 5s ease-in-out;
+}
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: 0;
+  background: 0 0;
+}
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  color: transparent;
+}
